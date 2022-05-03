@@ -29,10 +29,10 @@ http.createServer(function(request, response){
             });
 
             const sql = `SELECT * FROM users WHERE email=? AND pass=?`;
-            const filter = ["s-k@mail.ru", '123456']
+            const filter = [result.email, result.pass]
 
             connection.query(sql, filter, function (err, res){
-                // console.log(res);
+                // console.log(res);s
                 if(res[0].email === 's-k@mail.ru' && res[0].pass === '123456') {
                     console.log('success');
                 } else {
